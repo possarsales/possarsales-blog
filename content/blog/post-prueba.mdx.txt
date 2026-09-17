@@ -1,0 +1,13 @@
+import HotmartCard from '../../components/HotmartCard.astro';
+
+# Análisis del Curso Demo de Finanzas
+
+Este es un artículo de prueba para verificar la velocidad y el diseño de **PossarSales**.
+
+<HotmartCard 
+  title="Master en Finanzas Personales (Demo)"
+  description="Aprende a gestionar tu dinero e inversiones con este programa especializado."
+  price="$49.99 USD"
+  hotlink="https://hotmart.com"
+  badge="Producto Demo"
+/>
