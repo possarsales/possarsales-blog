@@ -1,0 +1,188 @@
+---
+import HotmartCard from '../components/HotmartCard.astro';
+
+// Configuración SEO
+const siteTitle = "PossarSales | Tecnología, Criptoactivos & Cursos Hotmart";
+const siteDescription = "Análisis, revisiones de hardware, bots de trading algorítmico, educación financiera y los mejores cursos digitales verificados en Hotmart.";
+const siteUrl = "https://possarsales.com"; // Reemplazar por tu dominio real
+const heroImage = "/possarsales.jpg"; // La imagen que subiste guardada en la carpeta /public
+---
+
+<!html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{siteTitle}</title>
+    <meta name="description" content={siteDescription} />
+    <link rel="canonical" href={siteUrl} />
+    
+    <!-- Open Graph / Facebook / WhatsApp -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={`${siteUrl}${heroImage}`} />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@PossarSales" />
+    <meta name="twitter:title" content={siteTitle} />
+    <meta name="twitter:description" content={siteDescription} />
+    <meta name="twitter:image" content={`${siteUrl}${heroImage}`} />
+
+    <!-- Datos Estructurados Schema.org para Google Top 1 -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "PossarSales",
+      "url": siteUrl,
+      "description": siteDescription,
+      "publisher": {
+        "@type": "Organization",
+        "name": "PossarSales",
+        "logo": `${siteUrl}${heroImage}`
+      }
+    })} />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-950 text-slate-100 min-h-screen font-sans antialiased">
+    
+    <!-- Navbar Premium -->
+    <nav class="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-50">
+      <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <img src={heroImage} alt="PossarSales Logo" class="w-10 h-10 rounded-full object-cover border border-cyan-500" />
+          <span class="text-xl font-black bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+            POSSAR SALES
+          </span>
+        </div>
+        <div class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
+          <a href="#tecnologia" class="hover:text-cyan-400 transition-colors">Tecnología</a>
+          <a href="#finanzas" class="hover:text-cyan-400 transition-colors">Cripto & Trading Bots</a>
+          <a href="#hotmart" class="hover:text-cyan-400 transition-colors">Cursos Hotmart</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Header Hero Section -->
+    <header class="relative overflow-hidden border-b border-slate-800 py-20 bg-gradient-to-b from-slate-900 to-slate-950">
+      <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold px-3 py-1 rounded-full mb-4">
+            Ecosistema Tecnológico & Financiero
+          </span>
+          <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-tight text-white mb-4">
+            Impulsa tus Ingresos con <span class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">Tecnología e Inteligencia Financiera</span>
+          </h1>
+          <p class="text-slate-400 text-lg leading-relaxed mb-6">
+            Análisis experto de hardware, software especializado, bots de inversión en criptoactivos y los programas más cotizados de educación digital en Hotmart.
+          </p>
+          <div class="flex gap-4">
+            <a href="#hotmart" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg shadow-cyan-500/20 transition-all">
+              Explorar Catálogo
+            </a>
+          </div>
+        </div>
+        
+        <!-- Hero Visual (Tu imagen institucional) -->
+        <div class="relative flex justify-center">
+          <div class="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-3xl blur opacity-30 group-hover:opacity-100 transition duration-1000"></div>
+          <img 
+            src={heroImage} 
+            alt="PossarSales Tech & Financial Ecosystem" 
+            class="relative rounded-2xl shadow-2xl border border-slate-700 w-full max-w-md object-cover"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Sección de Productos -->
+    <main class="max-w-6xl mx-auto px-4 py-16 space-y-20">
+      
+      <!-- CLUSTER 1: Finanzas & Trading Bots -->
+      <section id="finanzas">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-2 bg-cyan-500/10 rounded-lg border border-cyan-500/30">
+            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Educación Financiera & Bots Algorítmicos</h2>
+            <p class="text-slate-400 text-sm">Plataformas de inversión, trading de criptoactivos y sistemas automatizados.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <HotmartCard 
+            title="Master en Crypto & Trading Bots"
+            description="Aprende a programar y desplegar bots algorítmicos para operar automáticamente en criptoactivos y bolsas globales."
+            price="$297.00 USD"
+            rating="4.9"
+            hotlink="https://go.hotmart.com/K107468391S?dp=1"
+            badge="Alta Demanda"
+            category="Fintech"
+            image={heroImage}
+          />
+
+          <HotmartCard 
+            title="Estrategias de Inversión Automatizada"
+            description="Construye tu portafolio de inversión diversificado utilizando inteligencia artificial y modelos cuantitativos."
+            price="$147.00 USD"
+            rating="4.8"
+            hotlink="https://go.hotmart.com/T107452752L"
+            badge="Recomendado"
+            category="Finanzas"
+            image={heroImage}
+          />
+        </div>
+      </section>
+
+      <!-- CLUSTER 2: Cursos Educativos Hotmart -->
+      <section id="hotmart">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="p-2 bg-emerald-500/10 rounded-lg border border-emerald-500/30">
+            <svg class="w-6 h-6 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-white">Programas y Habilidades de Alto Valor</h2>
+            <p class="text-slate-400 text-sm">Cursos de formación profesional verificados en Hotmart.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <HotmartCard 
+            title="Cake Designer / Diseñador de Pasteles"
+            description="Convierte tu pasión en un negocio rentable con técnicas profesionales de pastelería y diseño digital de tartas."
+            price="$197.00 USD"
+            rating="4.9"
+            hotlink="https://go.hotmart.com/K107468391S?dp=1"
+            badge="Bestseller"
+            category="Emprendimiento"
+          />
+
+          <HotmartCard 
+            title="Inglés en 30 días con Natalie"
+            description="Dominio práctico e intensivo del idioma inglés diseñado para profesionales del sector tecnológico y negocios."
+            price="$120.00 USD"
+            rating="4.8"
+            hotlink="https://go.hotmart.com/T107452752L"
+            badge="Popular"
+            category="Idiomas"
+          />
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer Institucional -->
+    <footer class="border-t border-slate-800 bg-slate-900 py-12 text-center text-slate-500 text-sm">
+      <div class="max-w-6xl mx-auto px-4">
+        <p class="mb-2">© 2026 POSSAR SALES. Todos los derechos reservados.</p>
+        <p class="text-xs text-slate-600">Aviso legal: Este sitio web contiene enlaces de afiliados de Hotmart. Al realizar una compra a través de nuestros enlaces, podemos recibir una comisión sin costo adicional para usted.</p>
+      </div>
+    </footer>
+
+  </body>
+</html>

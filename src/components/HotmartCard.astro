@@ -1,0 +1,78 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  rating: string;
+  hotlink: string;
+  badge?: string;
+  category?: string;
+  image?: string;
+}
+
+const { 
+  title, 
+  description, 
+  price, 
+  rating, 
+  hotlink, 
+  badge = "Destacado", 
+  category = "Tecnología & Finanzas",
+  image = "/possarsales.jpg"
+} = Astro.props;
+---
+
+<div class="bg-slate-900 border border-slate-800 hover:border-cyan-500 rounded-2xl overflow-hidden shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col justify-between group">
+  <div>
+    <!-- Imagen del Producto / Banner -->
+    <div class="relative h-48 overflow-hidden bg-slate-950">
+      <img 
+        src={image} 
+        alt={title} 
+        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+        loading="lazy"
+      />
+      <span class="absolute top-3 left-3 bg-cyan-500/20 backdrop-blur-md text-cyan-400 border border-cyan-500/30 text-xs font-semibold px-3 py-1 rounded-full">
+        {category}
+      </span>
+      {badge && (
+        <span class="absolute top-3 right-3 bg-emerald-500/20 backdrop-blur-md text-emerald-400 border border-emerald-500/30 text-xs font-semibold px-3 py-1 rounded-full">
+          {badge}
+        </span>
+      )}
+    </div>
+
+    <!-- Contenido -->
+    <div class="p-6">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-amber-400 font-medium text-sm flex items-center gap-1">
+          ★ {rating} <span class="text-slate-500 text-xs">(Hotmart Verified)</span>
+        </span>
+        <span class="text-xl font-extrabold text-cyan-400">{price}</span>
+      </div>
+
+      <h3 class="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
+        {title}
+      </h3>
+      
+      <p class="text-slate-400 text-sm leading-relaxed mb-4">
+        {description}
+      </p>
+    </div>
+  </div>
+
+  <!-- Botón Call To Action -->
+  <div class="p-6 pt-0">
+    <a 
+      href={hotlink} 
+      target="_blank" 
+      rel="noopener noreferrer sponsored" 
+      class="w-full inline-flex items-center justify-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-cyan-500/25 transition-all duration-200"
+    >
+      <span>Ver Detalles y Oferta</span>
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+      </svg>
+    </a>
+  </div>
+</div>

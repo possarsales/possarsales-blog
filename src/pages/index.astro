@@ -1,17 +1,51 @@
 ---
-
+import HotmartCard from '../components/HotmartCard.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>PossarSales | Recomendaciones Oficiales</title>
+    <!-- Carga de Tailwind CSS para aplicar los estilos visuales -->
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-slate-100 min-h-screen font-sans">
+    
+    <!-- Encabezado PossarSales -->
+    <header class="bg-slate-900 text-white py-12 text-center shadow-lg">
+      <h1 class="text-4xl font-extrabold tracking-tight">PossarSales</h1>
+      <p class="text-slate-400 mt-2 text-lg">Cursos y herramientas recomendadas para potenciar tus ventas</p>
+    </header>
+
+    <!-- Sección de Productos Afiliados -->
+    <main class="max-w-5xl mx-auto px-4 py-12">
+      <h2 class="text-2xl font-bold text-slate-800 text-center mb-8">Productos Recomendados</h2>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- PRODUCTO REAL 1 -->
+        <HotmartCard 
+          title="Cake Designer / Diseñador de Pasteles"
+          description="Escribe aquí de qué trata este curso o programa digital y a quién va dirigido."
+          price="$197.00 USD"
+          rating="4.9"
+          hotlink="https://go.hotmart.com/K107468391S?dp=1"
+          badge="Popular"
+        />
+
+        <!-- PRODUCTO REAL 2 -->
+        <HotmartCard 
+          title="Inglés en 30 días con Natalie"
+          description="Escribe aquí una breve descripción convincente sobre los beneficios de este producto."
+          price="$120.00 USD"
+          rating="4.8"
+          hotlink="https://go.hotmart.com/T107452752L"
+          badge="Recomendado"
+        />
+
+      </div>
+    </main>
+
+  </body>
 </html>
